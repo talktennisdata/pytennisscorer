@@ -1,16 +1,17 @@
 ---
+# Sphinx documentation build and deployment workflow
 name: Documentation
 
 'on':
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - 'docs/**'
       - 'src/**'
       - '.github/workflows/docs.yml'
       - 'pyproject.toml'
   pull_request:
-    branches: [main]
+    branches: [master]
     paths:
       - 'docs/**'
       - 'src/**'
@@ -99,7 +100,7 @@ jobs:
     runs-on: ubuntu-latest
     if: >
       github.event_name == 'push' &&
-      github.ref == 'refs/heads/main'
+      github.ref == 'refs/heads/master'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
