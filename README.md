@@ -1,12 +1,14 @@
-# Python Tennis Scorer
+# Python Tennis Scorer 🎾
 
 [![CI](https://github.com/talktennisdata/pytennisscorer/workflows/CI/badge.svg)](https://github.com/talktennisdata/pytennisscorer/actions/workflows/ci.yml)
 [![PyPI version](https://img.shields.io/pypi/v/pytennisscorer.svg)](https://pypi.org/project/pytennisscorer/)
 [![Python versions](https://img.shields.io/pypi/pyversions/pytennisscorer.svg)](https://pypi.org/project/pytennisscorer/)
-[![Documentation](https://img.shields.io/badge/docs-GitHub%20Pages-blue)](https://talktennisdata.github.io/pytennisscorer/)
-[![codecov](https://codecov.io/gh/talktennisdata/pytennisscorer/branch/main/graph/badge.svg)](https://codecov.io/gh/talktennisdata/pytennisscorer)
+[![Documentation](https://img.shields.io/badge/docs-Interactive-brightgreen)](https://talktennisdata.github.io/pytennisscorer/)
+[![codecov](https://codecov.io/gh/talktennisdata/pytennisscorer/branch/master/graph/badge.svg)](https://codecov.io/gh/talktennisdata/pytennisscorer)
 
 A Python package for tennis match scoring with support for various match formats.
+
+**[Try it live in your browser!](https://talktennisdata.github.io/pytennisscorer/)** No installation needed - our interactive documentation lets you experiment with PyTennisScorer directly in your browser using Pyodide.
 
 ## Features
 
