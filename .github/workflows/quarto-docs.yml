@@ -3,13 +3,13 @@ name: Deploy Quarto Documentation
 
 "on":
   push:
-    branches: [main]
+    branches: [master]
     paths:
       - "docs-quarto/**"
       - ".github/workflows/quarto-docs.yml"
       - "src/**"  # Rebuild docs if source changes
   pull_request:
-    branches: [main]
+    branches: [master]
     paths:
       - "docs-quarto/**"
       - ".github/workflows/quarto-docs.yml"
@@ -70,7 +70,7 @@ jobs:
   deploy:
     if: >
       github.event_name == 'push' &&
-      github.ref == 'refs/heads/main'
+      github.ref == 'refs/heads/master'
     needs: build
     runs-on: ubuntu-latest
     environment:
