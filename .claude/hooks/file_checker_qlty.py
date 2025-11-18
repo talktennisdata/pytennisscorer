@@ -115,14 +115,16 @@ def main() -> int:
     if "No issues" in check_output and check_exit_code == 0:
         print("", file=sys.stderr)
         print(f"{GREEN}✅ QLTY: No issues{NC}", file=sys.stderr)
-        return 2
+        return 0
 
     issue_lines = []
     for line in check_output.splitlines():
         if any(x in line for x in [r"^\s*[0-9]+:[0-9]+\s+", "high", "medium", "low"]):
             issue_lines.append(line)
 
-    remaining_issues = sum(1 for line in check_output.splitlines() if any(x in line for x in ["high", "medium", "low"]))
+    remaining_issues = sum(
+        1 for line in check_output.splitlines() if any(x in line for x in ["high", "medium", "low"])
+    )
 
     print("", file=sys.stderr)
     print(
