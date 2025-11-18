@@ -54,13 +54,7 @@ jobs:
       - name: Install Quarto-live extension
         run: |
           cd docs-quarto
-          # Install the quarto-live extension
-          quarto add r-wasm/quarto-live --no-prompt || true
-          # Verify extension was installed
-          ls -la _extensions/ || echo "No extensions directory"
-          ls -la _extensions/r-wasm/ || echo "No r-wasm directory"
-          ls -la _extensions/r-wasm/quarto-live/ || \
-            echo "No quarto-live directory"
+          quarto add r-wasm/quarto-live --no-prompt
 
       - name: Render Quarto documentation
         run: |
