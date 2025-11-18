@@ -64,6 +64,7 @@ dmypy.json
 # Distribution
 *.tar.gz
 *.whl
+!docs-quarto/wheels/*.whl
 
 # Documentation
 docs/_build/
