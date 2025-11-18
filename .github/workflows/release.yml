@@ -1,4 +1,5 @@
 ---
+# Release and PyPI publishing workflow
 name: Release
 
 'on':
