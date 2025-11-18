@@ -83,7 +83,7 @@ jobs:
 
       - name: Test wheel installation
         run: |
-          uv pip install dist/*.whl
+          uv pip install --system dist/*.whl
           uv run python -c "from pytennisscorer import TennisScorer"
           uv run python -c "print('Package installed successfully')"
 
