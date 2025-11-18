@@ -3,7 +3,7 @@
 import pytest
 
 from pytennisscorer.formatter import format_game_score, format_match_score
-from pytennisscorer.models import GameState, MatchState, MatchType, SetState, ScoringRules
+from pytennisscorer.models import GameState, MatchState, MatchType, ScoringRules, SetState
 
 
 @pytest.mark.unit

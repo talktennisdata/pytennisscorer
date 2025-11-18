@@ -2,7 +2,7 @@
 
 import pytest
 
-from pytennisscorer.models import GameState, MatchState, MatchType, SetState, ScoringRules
+from pytennisscorer.models import GameState, MatchState, MatchType, ScoringRules, SetState
 from pytennisscorer.progression import (
     check_match_complete,
     get_match_winner,
@@ -272,9 +272,6 @@ def test_get_match_winner_returns_none_when_not_finished() -> None:
 @pytest.mark.unit
 def test_progress_to_next_set_creates_new_set() -> None:
     """Test that progressing to next set creates a fresh set."""
-    game = GameState(home_score=0, away_score=0, is_tiebreak=False)
-    old_set = SetState(home_score=6, away_score=4, current_game=game, games=[])
-
     new_set = progress_to_next_set(deciding_point=False)
 
     assert new_set.home_score == 0

@@ -284,7 +284,7 @@ def main() -> int:
     else:
         print("", file=sys.stderr)
         print(f"{GREEN}✅ Python: All checks passed{NC}", file=sys.stderr)
-        return 2
+        return 0
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@
 
 import pytest
 
-from pytennisscorer.models import GameState, MatchState, MatchType, SetState, ScoringRules
+from pytennisscorer.models import GameState, MatchState, MatchType, ScoringRules, SetState
 
 
 @pytest.mark.unit
