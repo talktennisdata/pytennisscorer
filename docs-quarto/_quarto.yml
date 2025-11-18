@@ -64,6 +64,10 @@ format:
     code-overflow: wrap
     link-external-newwindow: true
 
+# Disable server-side code execution - all code runs client-side via Pyodide
+execute:
+  enabled: false
+
 filters:
   - quarto-live
 
