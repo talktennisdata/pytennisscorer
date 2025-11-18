@@ -160,13 +160,13 @@ jobs:
           uv pip list
 
       - name: Run tests with coverage
-        run: |
-          uv run pytest -v --strict-markers \
-            --cov=src/pytennisscorer \
-            --cov-report=term-missing \
-            --cov-report=xml \
-            --cov-report=html \
-            --cov-fail-under=80
+        run: >-
+          uv run pytest -v --strict-markers
+          --cov=src/pytennisscorer
+          --cov-report=term-missing
+          --cov-report=xml
+          --cov-report=html
+          --cov-fail-under=80
 
       - name: Upload coverage reports to Codecov
         if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.11'
@@ -249,7 +249,7 @@ jobs:
 
       - name: Check distribution
         run: |
-          uv pip install twine
+          uv pip install --system twine
           uv run twine check dist/*
 
       - name: Upload build artifacts
