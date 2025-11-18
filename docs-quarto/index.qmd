@@ -16,7 +16,7 @@ Try it live in your browser - no installation required!
 
 ## Quick Demo
 
-Experience PyTennisScorer in action! Click "Run Code" to start scoring a tennis match:
+Experience PyTennisScorer in action! Click "Run Code" below to start scoring a tennis match:
 
 ```{python}
 #| live: true
