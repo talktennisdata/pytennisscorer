@@ -84,12 +84,12 @@ jobs:
       - name: Test wheel installation
         run: |
           uv pip install --system dist/*.whl
-          uv run python -c "from pytennisscorer import TennisScorer"
-          uv run python -c "print('Package installed successfully')"
+          python -c "from pytennisscorer import TennisScorer"
+          python -c "print('Package installed successfully')"
 
       - name: Test basic functionality
         run: |
-          uv run python -c "
+          python -c "
           from pytennisscorer import TennisScorer, MatchType
           scorer = TennisScorer(MatchType.SINGLES_GRANDSLAM)
           scorer.increase_score(0)
