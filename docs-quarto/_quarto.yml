@@ -69,7 +69,7 @@ execute:
   enabled: false
 
 filters:
-  - quarto-live
+  - live
 
 # Quarto-live configuration for Python/Pyodide
 live:
