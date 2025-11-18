@@ -10,6 +10,7 @@ format:
 # Welcome to PyTennisScorer 🎾
 
 A pure Python library for tennis match scoring with support for multiple match formats.
+
 Try it live in your browser - no installation required!
 :::
 
