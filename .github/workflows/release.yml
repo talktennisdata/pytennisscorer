@@ -86,12 +86,14 @@ jobs:
           version: 'latest'
 
       - name: Test wheel installation
+        shell: bash
         run: |
           uv pip install --system dist/*.whl
           python -c "from pytennisscorer import TennisScorer"
           python -c "print('Package installed successfully')"
 
       - name: Test basic functionality
+        shell: bash
         run: |
           python -c "
           from pytennisscorer import TennisScorer, MatchType
