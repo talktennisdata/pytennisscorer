@@ -6,18 +6,13 @@ async function setupPyodide(pyodide) {
   await pyodide.loadPackage('micropip');
   const micropip = pyodide.pyimport('micropip');
 
-  // Load local pytennisscorer wheel if available
+  // Install pytennisscorer from PyPI
   try {
-    const wheelPath = './wheels/pytennisscorer-0.1.0-py3-none-any.whl';
-    await micropip.install(wheelPath);
-    console.log('Loaded local pytennisscorer wheel');
+    await micropip.install('pytennisscorer');
+    console.log('✅ Successfully installed pytennisscorer from PyPI');
   } catch (error) {
-    console.warn('Could not load local wheel, will try to install from PyPI:', error);
-    try {
-      await micropip.install('pytennisscorer');
-    } catch (pypiError) {
-      console.warn('pytennisscorer not available on PyPI yet');
-    }
+    console.error('❌ Error installing pytennisscorer:', error);
+    console.warn('Live code examples may not work properly');
   }
 
   // Pre-import common modules to speed up execution
