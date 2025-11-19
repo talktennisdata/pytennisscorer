@@ -61,8 +61,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest, windows-latest, macos-latest]
         python-version: ['3.9', '3.12']
+        exclude:
+          # Skip Python 3.9 on Windows to save CI time (3.12 is sufficient)
+          - os: windows-latest
+            python-version: '3.9'
 
     steps:
       - name: Download build artifacts
@@ -88,12 +92,13 @@ jobs:
           python -c "print('Package installed successfully')"
 
       - name: Test basic functionality
-        shell: python
         run: |
+          python -c "
           from pytennisscorer import TennisScorer, MatchType
           scorer = TennisScorer(MatchType.SINGLES_GRANDSLAM)
           scorer.increase_score(0)
           print('Basic functionality test passed')
+          "
 
   publish-testpypi:
     name: Publish to TestPyPI
